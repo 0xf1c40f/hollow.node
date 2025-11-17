@@ -16,12 +16,6 @@
     window.setInterval = (fn, ms) => NativeIv(fn, ms / 1e7)
     `);
 
-    const NativeTo = setTimeout;
-    const NativeIv = setInterval;
-
-    window.setTimeout = (fn, ms) => NativeTo(fn, ms * 0.01);
-    window.setInterval = (fn, ms) => NativeIv(fn, ms * 0.01);
-
     const Click = (sel) => {
         const Iv = setInterval(() => {
             const El = document.querySelector(sel);
