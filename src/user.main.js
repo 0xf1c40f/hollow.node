@@ -1,12 +1,3 @@
-// ==UserScript==
-// @name         hollow.node
-// @match        *://*.tutwuri.id/*
-// @match        *://sfl.gl/ready/go*
-// @match        *://app.khaddavi.net/*
-// @match        *://bahasteknologi.com/*
-// @run-at       document-start
-// ==/UserScript==
-
 (() => {
     window.open = () => {};
 
