@@ -1,6 +1,7 @@
 (() => {
     window.open = () => {};
 
+    console.log('hollow.node loaded!');
     const inject = (code) => { // ts skidded from idk
         const el = document.createElement('script');
         el.textContent = code;
