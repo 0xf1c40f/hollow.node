@@ -1,6 +1,21 @@
 (() => {
     window.open = () => {};
 
+    const inject = (code) => { // ts skidded from idk
+        const el = document.createElement('script');
+        el.textContent = code;
+        document.documentElement.appendChild(el);
+        el.remove();
+    };
+
+    inject(`
+    const NativeTo = window.setTimeout;
+    const NativeIv = window.setInterval;
+
+    window.setTimeout = (fn, ms) => NativeTo(fn, ms / 1e7);
+    window.setInterval = (fn, ms) => NativeIv(fn, ms / 1e7)
+    `);
+
     const NativeTo = setTimeout;
     const NativeIv = setInterval;
 
