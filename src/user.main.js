@@ -1,21 +1,24 @@
+// ==UserScript==
+// @name         hollow.node
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  bypass sfl.gl and others!
+// @match        *://*.tutwuri.id/*
+// @match        *://sfl.gl/ready/go*
+// @match        *://app.khaddavi.net/*
+// @match        *://bahasteknologi.com/*
+// ==/UserScript==
+
 (() => {
     window.open = () => {};
 
     console.log('hollow.node loaded!');
-    const inject = (code) => { // ts skidded from idk
-        const el = document.createElement('script');
-        el.textContent = code;
-        document.documentElement.appendChild(el);
-        el.remove();
-    };
-
-    inject(`
+    
     const NativeTo = window.setTimeout;
     const NativeIv = window.setInterval;
 
     window.setTimeout = (fn, ms) => NativeTo(fn, ms / 1e7);
     window.setInterval = (fn, ms) => NativeIv(fn, ms / 1e7)
-    `);
 
     const Click = (sel) => {
         const Iv = setInterval(() => {
@@ -24,7 +27,7 @@
                 clearInterval(Iv);
                 setTimeout(() => El.click(), 0);
             }
-        }, 50);
+        }, 0);
     };
 
     const Verify = () => {
@@ -33,7 +36,7 @@
             if (El && El.offsetParent !== null && El.textContent.trim() !== 'Scroll Down') {
                 El.click();
             }
-        }, 50);
+        }, 0);
     };
 
     const Second = () => {
@@ -43,7 +46,7 @@
                 clearInterval(Iv);
                 El.click();
             }
-        }, 50);
+        }, 0);
     };
 
     const Redir = setInterval(() => {
@@ -71,6 +74,6 @@
                 clearInterval(Iv);
                 El.click();
             }
-        }, 50);
+        }, 0);
     }
 })();
