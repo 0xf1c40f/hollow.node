@@ -8,6 +8,9 @@ a script for tampermonkey/violentmonkey that bypasses links. this script is easy
 - https://app.khaddavi.net/
 - https://bahasteknologi.com/
 
+## Installation
+[![Download](https://img.shields.io/badge/Install-Userscript-blue?style=for-the-badge&logo=greasyfork)](https://raw.githubusercontent.com/0xf1c40f/hollow.node/refs/heads/main/src/main.user.js)
+
 ## Social & Supports
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&logoColor=white)](https://t.me/getoffset)
 
